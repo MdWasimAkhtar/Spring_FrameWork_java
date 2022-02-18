@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:integration="http://www.springframework.org/schema/integration"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/integration
+           http://www.springframework.org/schema/integration/spring-integration-1.0.xsd">
+   
+   <!-- we can't use Autowired for primitive and String type -->
+   
+     <bean  class="com.springCore.Autowired.Address" name="address3">
+       <property name="street" value="Ayyapa Nagar"></property>
+       <property name="city" value="Bangalore"></property>
+     </bean>
+     
+     <!-- we can use Autowiring for Reference type -->
+     
+      <bean  class="com.springCore.Autowired.Address" name="address">
+       <property name="street" value="Sudha Ji Nagar"></property>
+       <property name="city" value="Katihar"></property>
+     </bean>
+     
+     
+     <bean class="com.springCore.Autowired.Emp" name="emp1" autowire="byName">
+      
+     </bean>
+   
+</beans>
