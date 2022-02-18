@@ -1,0 +1,13 @@
+.container-fluid{
+   
+    background-color:rgba(187, 182, 211, 0.308) ;
+}
+
+#row {
+    align-self: center;
+    margin-right: auto;
+  }
+
+#row1{
+    border: 1px solid tomato;
+}
