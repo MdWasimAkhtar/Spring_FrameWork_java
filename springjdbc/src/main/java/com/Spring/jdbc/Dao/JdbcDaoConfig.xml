@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    
+    <!--  
+    <bean  class="com.springCore.autowiringBean.StudentFees" name="studfees">
+    
+    </bean>
+    
+    <bean class="com.springCore.autowiringBean.Student"  name="fee1">
+        <property name="name" value="Shilpa"></property>
+        <property name="Course" value="Csc"></property>
+        
+        
+    <bean class="com.springCore.annotation.Address" name="temp1">
+       <property name="street" value="AyyapaNagar{Bangalore}"></property>
+       <property name="Dist" value="Katihar"></property>
+    </bean>
+   
+    <bean class="com.springCore.annotation.Address" name="temp2">
+       <property name="street" value="NewYork{Buffalo}"></property>
+       <property name="Dist" value="TimeSquare"></property>
+    </bean>
+
+    <bean class="com.springCore.annotation.Emp"  name="emp1"  > </bean>
+     
+    </bean>
+     
+    -->
+    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"  name="dS">
+       <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+       <property name="url" value="jdbc:mysql://localhost:3306/SpringJdbc"></property>
+       <property name="username" value="root"></property>
+       <property name="password" value="My@Sql1234"></property>
+    </bean>
+    
+   
+    <bean class="org.springframework.jdbc.core.JdbcTemplate"  name="jdbcTemp">
+           <property name="dataSource">
+                 <ref  bean="dS"/>
+           </property>
+    </bean>
+    
+    <bean class="com.Spring.jdbc.Dao.StudentDaoImplement"  name="studentDao">
+         <property name="jdbctemplate">
+           <ref  bean="jdbcTemp"  />
+         </property>
+    </bean>
+    
+</beans>
